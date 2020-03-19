@@ -37,6 +37,10 @@ body, html {
     background-color: oldlace;
 }
 
+.verdict {
+    background-color: oldlace;
+}
+
 ul {
   list-style-type: none;
   padding: 0;

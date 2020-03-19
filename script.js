@@ -41,12 +41,14 @@ function renderList1() {
   
     // If that element is a button...
     if (element.matches("button") === true) {
-      // Get its data-index value and remove the todo element from the list
+      // Get its data-index value
       var index = element.parentElement.getAttribute("data-index");
-      if (index = "HTML") {
-          return verdict.innerHTML = correct;
+      console.log(index);
+      if (index = 0) {
+        return verdict.innerHTML = correct;
+      } if (index === 1 || 2 || 3) {
+          return verdict.innerHTML = wrong;
       }
-      return
       
     }
   });
