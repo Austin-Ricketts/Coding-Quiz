@@ -33,19 +33,14 @@ body, html {
       margin-top: 40px;
   }
 
-  input {
-  height: 50px;
-  width: 100%;
-  padding: 6px;
-  margin-top: 10px;
-  font-size: 2.4em;
-  border: none;
+.qSet {
+    background-color: oldlace;
 }
 
 ul {
   list-style-type: none;
   padding: 0;
-  background-color: white;
+  background-color: transparent;
 }
 
 li {
@@ -53,7 +48,7 @@ li {
   margin-top: 5px;
   margin-bottom: 5px;
   padding: 5px;
-  background-color: #ff5d88;
+  background-color: navy;
   color: white;
   font-size: 1.5em;
   line-height: 1.5;
