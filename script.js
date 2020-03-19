@@ -1,6 +1,7 @@
 var timeEl = document.querySelector(".time");
 var qSet = document.querySelector(".qSet");
 var postList = document.querySelector("#answer-options");
+var verdict = document.querySelector(".verdict");
 
 var list1 = ["HTML", "CSS", "Javascript", "JQuery"];
 var list2 = ["Mandarin", "German", "Javascript", "Esperanto"];
@@ -12,6 +13,8 @@ var correct = "Correct!";
 var wrong = "Wrong!";
 var secondsLeft = 60;
 
+renderList1();
+setTime();
 function renderList1() {
     
     qSet.innerHTML = "1. Which language is used to create the basic architecture of a webpage?";
@@ -33,7 +36,20 @@ function renderList1() {
       postList.appendChild(li);
     }
   }
-renderList1();
+  postList.addEventListener("click", function(event) {
+    var element = event.target;
+  
+    // If that element is a button...
+    if (element.matches("button") === true) {
+      // Get its data-index value and remove the todo element from the list
+      var index = element.parentElement.getAttribute("data-index");
+      if (index = "HTML") {
+          return verdict.innerHTML = correct;
+      }
+      return
+      
+    }
+  });
 
 function setTime() {
     var timerInterval = setInterval(function() {
@@ -47,4 +63,3 @@ function setTime() {
     }, 1000);
 }
 
-setTime();
