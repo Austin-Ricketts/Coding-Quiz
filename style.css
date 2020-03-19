@@ -1,0 +1,24 @@
+body, html {
+    height: 100%;
+  }
+
+.bg {
+    background-image: url("images/grayscale-photo-of-computer-laptop-near-white-notebook-and-169573.jpg");
+  
+    height: 100%;
+  
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .time {
+      font-style: normal;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      color: orange;
+  }
+
+  #game-text {
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      color: navy;
+  }
