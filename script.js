@@ -54,7 +54,7 @@ function renderList1() {
       if (number === 1 || 2 || 3) {
           return verdict.innerHTML = wrong;
       }
-      return
+      //execute renderList2 function here.
     }
   });
 

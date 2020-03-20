@@ -31,6 +31,8 @@ body, html {
       width: 800px;
       margin: 0 auto;
       margin-top: 40px;
+      font-size: 20px;
+      text-align: center;
   }
 
 .qSet {
@@ -39,6 +41,8 @@ body, html {
 
 .verdict {
     background-color: oldlace;
+    text-align: center;
+    font-size: 20px;
 }
 
 ul {
@@ -56,6 +60,7 @@ li {
   color: white;
   font-size: 1.5em;
   line-height: 1.5;
+  text-align: left;
 }
 
 li:before {
