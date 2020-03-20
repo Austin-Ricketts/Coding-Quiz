@@ -19,6 +19,14 @@ body, html {
     background-size: cover;
   }
 
+  .start-button {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: navy;
+    margin: 0 auto;
+    margin-top: 40px;
+    font-size: 20px;
+  }
+
   .time {
       font-style: normal;
       font-family: Georgia, 'Times New Roman', Times, serif;
