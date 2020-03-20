@@ -43,13 +43,18 @@ function renderList1() {
     if (element.matches("button") === true) {
       // Get its data-index value
       var index = element.parentElement.getAttribute("data-index");
+      parseInt(index);
       console.log(index);
-      if (index = 0) {
-        return verdict.innerHTML = correct;
-      } if (index === 1 || 2 || 3) {
-          return verdict.innerHTML = wrong;
+      console.log(parseInt(index));
+      var number = parseInt(index);
+      if (number === 0) {
+         return verdict.innerHTML = correct; 
       }
       
+      if (number === 1 || 2 || 3) {
+          return verdict.innerHTML = wrong;
+      }
+      return
     }
   });
 
