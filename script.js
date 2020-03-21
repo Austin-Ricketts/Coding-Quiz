@@ -28,24 +28,15 @@ startBtn.addEventListener("click", function(event) {
       }
 });
 
-var nextQ = document.createElement("button");
-nextQ.textContent = "Next Question";
-transition.appendChild(nextQ);
-
-transition.addEventListener("click", function(event) {
-    event.preventDefault();
-    var element = event.target;
-  if (element.matches("button") === true) {
-      console.log();
-      return renderList2();
-      }
-});
-
 
 function renderList1() {
     
     qSet.innerHTML = "1. Which language is used to create the basic architecture of a webpage?";
     postList.innerHTML = "";
+
+    var nextQ = document.createElement("button");
+    nextQ.textContent = "Next Question";
+    transition.appendChild(nextQ);
     
   
     // Render a new li for each question
