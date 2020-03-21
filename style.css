@@ -27,10 +27,28 @@ body, html {
     font-size: 20px;
   }
 
+  .score {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: navy;
+    margin: 0 auto;
+    margin-top: 40px;
+    font-size: 20px; 
+  }
+
   .time {
       font-style: normal;
       font-family: Georgia, 'Times New Roman', Times, serif;
       color: orange;
+  }
+
+  #announcement {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: navy;
+    width: 800px;
+    margin: 0 auto;
+    margin-top: 40px;
+    font-size: 20px;
+    text-align: center; 
   }
 
   #game-text {

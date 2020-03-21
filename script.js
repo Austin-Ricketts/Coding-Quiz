@@ -4,6 +4,9 @@ var postList = document.querySelector("#answer-options");
 var verdict = document.querySelector(".verdict");
 var startBtn = document.querySelector(".start-button");
 var transition = document.querySelector(".next-q");
+var scoreBtn = document.querySelector(".score");
+var timePost = document.querySelector(".time-post");
+
 
 var list1 = ["HTML", "CSS", "Javascript", "JQuery"];
 var list2 = ["Mandarin", "German", "Javascript", "Esperanto"];
@@ -71,6 +74,7 @@ function renderList1() {
           }
           
           if (number === 1 || 2 || 3) {
+              secondsLeft -= 2;
               return verdict.innerHTML = wrong;
           }
           
@@ -136,7 +140,8 @@ function renderList1() {
           }
           
           if (number === 0 || 1 || 3) {
-              return verdict.innerHTML = wrong;
+            secondsLeft -= 2;
+            return verdict.innerHTML = wrong;
           }
           //execute renderList2 function here.
         }
@@ -186,7 +191,8 @@ function renderList1() {
           }
           
           if (number === 0 || 1 || 2) {
-              return verdict.innerHTML = wrong;
+            secondsLeft -= 2;
+            return verdict.innerHTML = wrong;
           }
           
         }
@@ -237,7 +243,8 @@ function renderList1() {
           }
           
           if (number === 0 || 1 || 3) {
-              return verdict.innerHTML = wrong;
+            secondsLeft -= 2;
+            return verdict.innerHTML = wrong;
           }
           
         }
@@ -247,6 +254,8 @@ function renderList1() {
     
     qSet.innerHTML = "5. The easiest way for most Users to surf the web would be to use...";
     postList.innerHTML = "";
+
+    
     
   
     // Render a new li for each question
@@ -264,6 +273,7 @@ function renderList1() {
       postList.appendChild(li);
     }
     postList.addEventListener("click", function(event) {
+        
         var element = event.target;
       
         // If that element is a button...
@@ -279,23 +289,44 @@ function renderList1() {
           }
           
           if (number === 0 || 2 || 3) {
-              return verdict.innerHTML = wrong;
+            secondsLeft -= 2;
+            return verdict.innerHTML = wrong;
           }
           
         }
       });
 }
+
+var score = document.createElement("button");
+    score.textContent = "Push to Score";
+    scoreBtn.appendChild(score);
+
+    scoreBtn.addEventListener("click", function(event) {
+        event.preventDefault();
+        var element = event.target;
+      /*if (element.matches("button") === true) {
+          console.log();
+          return stopTime();
+          }*/
+        
+    });
   
 
 function setTime() {
     var timerInterval = setInterval(function() {
       secondsLeft--;
       timeEl.textContent = "Timer: " + secondsLeft;
-  
-      if(secondsLeft === 0) {
+      console.log(secondsLeft);
+      if(secondsLeft === 0 || -0) {
         clearInterval(timerInterval);
       }
   
     }, 1000);
 }
+
+/*function stopTime() {
+    clearInterval(timerInterval);
+    console.log(secondsLeft);
+    timePost.innerHTML = secondsLeft;
+}*/
 
