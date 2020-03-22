@@ -254,6 +254,10 @@ function renderList1() {
     
     qSet.innerHTML = "5. The easiest way for most Users to surf the web would be to use...";
     postList.innerHTML = "";
+
+    var score = document.createElement("button");
+    score.textContent = "Push to Score";
+    scoreBtn.appendChild(score);
     
     // Render a new li for each question
     for (var i = 0; i < list5.length; i++) {
@@ -306,32 +310,22 @@ function setTime() {
         secondsLeft--;
         timeEl.textContent = "Timer: " + secondsLeft;
         if(secondsLeft === 0) {
-          clearInterval(timerInterval);
+          return (clearInterval(timerInterval) + alert("Your time has runout. Refresh the page to try again."));
         }
          
     
       }, 1000);
 
-    var score = document.createElement("button");
-    score.textContent = "Push to Score";
-    scoreBtn.appendChild(score);
+    
 
     scoreBtn.addEventListener("click", function(event) {
         event.preventDefault();
         var element = event.target;
       if (element.matches("button") === true) {
-          clearInterval(timerInterval);
+          return (console.log(secondsLeft) + clearInterval(timerInterval) 
+          + alert("You have scored " + secondsLeft + "! Please click 'Record Your Score' to write your initials and score."));
           }
     
     });
 
 }
-
-
-
-/*function stopTime() {
-    clearInterval();
-    //console.log(secondsLeft);
-    //timePost.innerHTML = secondsLeft;
-}*/
-
