@@ -74,7 +74,7 @@ function renderList1() {
           }
           
           if (number === 1 || 2 || 3) {
-              secondsLeft -= 2;
+           
               return verdict.innerHTML = wrong;
           }
           
@@ -140,10 +140,10 @@ function renderList1() {
           }
           
           if (number === 0 || 1 || 3) {
-            secondsLeft -= 2;
+           
             return verdict.innerHTML = wrong;
           }
-          //execute renderList2 function here.
+          
         }
       });
 }
@@ -191,7 +191,7 @@ function renderList1() {
           }
           
           if (number === 0 || 1 || 2) {
-            secondsLeft -= 2;
+           
             return verdict.innerHTML = wrong;
           }
           
@@ -243,7 +243,7 @@ function renderList1() {
           }
           
           if (number === 0 || 1 || 3) {
-            secondsLeft -= 2;
+           
             return verdict.innerHTML = wrong;
           }
           
@@ -254,10 +254,7 @@ function renderList1() {
     
     qSet.innerHTML = "5. The easiest way for most Users to surf the web would be to use...";
     postList.innerHTML = "";
-
     
-    
-  
     // Render a new li for each question
     for (var i = 0; i < list5.length; i++) {
       var answer5 = list5[i];
@@ -289,7 +286,6 @@ function renderList1() {
           }
           
           if (number === 0 || 2 || 3) {
-            secondsLeft -= 2;
             return verdict.innerHTML = wrong;
           }
           
@@ -297,36 +293,45 @@ function renderList1() {
       });
 }
 
-var score = document.createElement("button");
+
+
+    
+
+
+  
+
+function setTime() {
+
+    var timerInterval = setInterval(function() {
+        secondsLeft--;
+        timeEl.textContent = "Timer: " + secondsLeft;
+        if(secondsLeft === 0) {
+          clearInterval(timerInterval);
+        }
+         
+    
+      }, 1000);
+
+    var score = document.createElement("button");
     score.textContent = "Push to Score";
     scoreBtn.appendChild(score);
 
     scoreBtn.addEventListener("click", function(event) {
         event.preventDefault();
         var element = event.target;
-      /*if (element.matches("button") === true) {
-          console.log();
-          return stopTime();
-          }*/
-        
+      if (element.matches("button") === true) {
+          clearInterval(timerInterval);
+          }
+    
     });
-  
 
-function setTime() {
-    var timerInterval = setInterval(function() {
-      secondsLeft--;
-      timeEl.textContent = "Timer: " + secondsLeft;
-      console.log(secondsLeft);
-      if(secondsLeft === 0 || -0) {
-        clearInterval(timerInterval);
-      }
-  
-    }, 1000);
 }
 
+
+
 /*function stopTime() {
-    clearInterval(timerInterval);
-    console.log(secondsLeft);
-    timePost.innerHTML = secondsLeft;
+    clearInterval();
+    //console.log(secondsLeft);
+    //timePost.innerHTML = secondsLeft;
 }*/
 
