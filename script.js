@@ -1,3 +1,4 @@
+//Here is the opening set of variables, making it easier to work later in the code.
 var timeEl = document.querySelector(".time");
 var qSet = document.querySelector(".qSet");
 var postList = document.querySelector("#answer-options");
@@ -6,18 +7,21 @@ var startBtn = document.querySelector(".start-button");
 var transition = document.querySelector(".next-q");
 var scoreBtn = document.querySelector(".score");
 var timePost = document.querySelector(".time-post");
-
-
+var postRecord = document.querySelector(".record-ul");
+var scoreBtn2 = document.querySelector(".scoreBtn2");
+var record = document.querySelector("#record");
+//Here is the list of answers that will be supplied for each question. They are set as arrays in order to be iterated through with a for loop.
 var list1 = ["HTML", "CSS", "Javascript", "JQuery"];
 var list2 = ["Mandarin", "German", "Javascript", "Esperanto"];
 var list3 = ["Nokia", "Verizon", "Landline", "Function"];
 var list4 = ["Pig Latin", "Aileaghan", "CSS", "Klingon"];
 var list5 = ["a Hydrofoil",  "a Web browser", "an O'Neill board", "a Ripcurl board"];
-
+//Here are variables that will initiate depending upon how the user answers the question. And the initiating time number is here as well.
 var correct = "Correct!";
 var wrong = "Wrong!";
 var secondsLeft = 60;
 
+//This button gets the game started. It calls two functions, one intializing the timer and the other renders the first q & a series.
 var starter = document.createElement("button");
 starter.textContent = "Start Game";
 startBtn.appendChild(starter);
@@ -31,6 +35,11 @@ startBtn.addEventListener("click", function(event) {
       }
 });
 
+
+
+//This function is the base code for the remainder of the q & a functions.
+//The question is rendered through innerHTML. The answers are produced through a for loop that iterates through the chosen array above.
+//The postList.eventListener picks up the number in the current array that has been clicked on, which is a string. parseInt turns it to an actual number. The if statement picks up that value and renders the correct or wrong variable.
 
 function renderList1() {
     
@@ -178,7 +187,7 @@ function renderList1() {
     postList.addEventListener("click", function(event) {
         var element = event.target;
       
-        // If that element is a button...
+        
         if (element.matches("button") === true) {
           // Get its data-index value
           var index = element.parentElement.getAttribute("data-index");
@@ -230,7 +239,7 @@ function renderList1() {
     postList.addEventListener("click", function(event) {
         var element = event.target;
       
-        // If that element is a button...
+        
         if (element.matches("button") === true) {
           // Get its data-index value
           var index = element.parentElement.getAttribute("data-index");
@@ -254,7 +263,7 @@ function renderList1() {
     
     qSet.innerHTML = "5. The easiest way for most Users to surf the web would be to use...";
     postList.innerHTML = "";
-
+    //This button appears only with the last question. You wouldn't want to score before that.
     var score = document.createElement("button");
     score.textContent = "Push to Score";
     scoreBtn.appendChild(score);
@@ -277,7 +286,7 @@ function renderList1() {
         
         var element = event.target;
       
-        // If that element is a button...
+        
         if (element.matches("button") === true) {
           // Get its data-index value
           var index = element.parentElement.getAttribute("data-index");
@@ -295,15 +304,10 @@ function renderList1() {
           
         }
       });
+      
 }
-
-
-
-    
-
-
-  
-
+//This function is called by the start button.
+//The score button has to be inside this function because the variable timerInterval is locally scoped and could not be reached with a clearInterval that was outside of this function.
 function setTime() {
 
     var timerInterval = setInterval(function() {
@@ -323,9 +327,12 @@ function setTime() {
         var element = event.target;
       if (element.matches("button") === true) {
           return (console.log(secondsLeft) + clearInterval(timerInterval) 
-          + alert("You have scored " + secondsLeft + "! Please click 'Record Your Score' to write your initials and score."));
+          + alert("You have scored " + secondsLeft + "! Please go to Enter Score Here to enter your initials and score."));
           }
     
     });
 
 }
+
+
+
